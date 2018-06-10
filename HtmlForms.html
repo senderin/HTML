@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>HTML Forms</h2>
+<!-- The HTML <form> element defines a form that is used to collect user input -->
+
+<!-- The <input> element can be displayed in several ways, depending on the type attribute.
+Type	Description
+<input type="text">	Defines a one-line text input field, the default width of a text field is 20 characters
+<input type="radio"> Defines a radio button 
+<input type="submit"> Defines a submit button
+<input type="button">
+<input type="password"> defines a password field
+<input type="reset"> defines a reset button that will reset all form values to their default values
+<input type="checkbox"> defines a checkbox.
+
+If the type attribute is omitted, the input field gets the default type: "text".
+
+HTML5 added several new input types:
+
+color
+date *used for input fields that should contain a date,  can also use the min and max attributes to add restrictions to dates
+datetime-local *specifies a date and time input field, with no time zone
+email *used for input fields that should contain an e-mail address
+month *allows the user to select a month and year.
+number *defines a numeric input field
+range *defines a control for entering a number whose exact value is not important
+search *  used for search fields (a search field behaves like a regular text field)
+tel *used for input fields that should contain a telephone number
+time *allows the user to select a time (no time zone)
+url
+week
+New input types that are not supported by older web browsers, will behave as <input type="text">.
+
+The value attribute specifies the initial value for an input field.
+The readonly attribute specifies that the input field is read only (cannot be changed).
+The disabled attribute specifies that the input field is disabled. A disabled input field is unusable and un-clickable, and its value will not be sent when submitting the form.
+The size attribute specifies the size (in characters) for the input field.
+The maxlength attribute specifies the maximum allowed length for the input field.
+
+HTML5 added the following attributes for <input>:
+autocomplete
+autofocus
+form
+formaction
+formenctype
+formmethod
+formnovalidate
+formtarget
+height and width
+list
+min and max
+multiple
+pattern (regexp)
+placeholder *specifies a hint that describes the expected value of an input field (a sample value or a short description of the format)
+required *The required attribute specifies that an input field must be filled out before submitting the form
+step *specifies the legal number intervals for an <input> element
+Example: if step="3", legal numbers could be -3, 0, 3, 6, etc.
+and the following attributes for <form>:
+autocomplete
+novalidate
+-->
+
+<!-- The action attribute defines the action to be performed when the form is submitted. Normally, the form data is sent to a web page on the server when the user clicks on the submit button. -->
+
+<!-- The target attribute specifies if the submitted result will open in a new browser tab, a frame, or in the current window.
+The default value is "_self" which means the form will be submitted in the current window.
+To make the form result open in a new browser tab, use the value "_blank"
+Other legal values are "_parent", "_top", or a name representing the name of an iframe.
+-->
+
+<!-- The method attribute specifies the HTTP method (GET or POST) to be used when submitting the form data:
+When to Use GET?
+The default method when submitting form data is GET.
+However, when GET is used, the submitted form data will be visible in the page address field:
+/action_page.php?firstname=Mickey&lastname=Mouse
+
+Notes on GET:
+Appends form-data into the URL in name/value pairs
+The length of a URL is limited (about 3000 characters)
+Never use GET to send sensitive data! (will be visible in the URL)
+Useful for form submissions where a user want to bookmark the result
+GET is better for non-secure data, like query strings in Google
+
+When to Use POST?
+Always use POST if the form data contains sensitive or personal information. The POST method does not display the submitted form data in the page address field.
+Notes on POST:
+POST has no size limitations, and can be used to send large amounts of data.
+Form submissions with POST cannot be bookmarked
+-->
+
+<!-- Each input field must have a name attribute to be submitted.
+
+If the name attribute is omitted, the data of that input field will not be sent at all. -->
+
+<!-- The <fieldset> element is used to group related data in a form.
+The <legend> element defines a caption for the <fieldset> element. 
+-->
+
+<!-- The <select> element defines a drop-down list
+The <option> elements defines an option that can be selected.
+By default, the first item in the drop-down list is selected.
+To define a pre-selected option, add the selected attribute to the option
+Use the size attribute to specify the number of visible values
+Use the multiple attribute to allow the user to select more than one value
+-->
+
+<!--The <textarea> element defines a multi-line input field (a text area)
+The rows attribute specifies the visible number of lines in a text area.
+The cols attribute specifies the visible width of a text area.
+-->
+
+<!-- Always specify the type attribute for the button element. Different browsers may use different default types for the button element.
+-->
+
+<!-- HTML5 added the following form elements:
+
+	<datalist>
+	<output>
+Note: Browsers do not display unknown elements. New elements that are not supported in older browsers will not "destroy" your web page.
+
+The <datalist> element specifies a list of pre-defined options for an <input> element.
+-->
+
+<!-- The <output> element represents the result of a calculation (like one performed by a script).
+-->
+
+<form action="/action_page.php" target="_self" method="GET">
+  <fieldset>
+  <legend>Personal information:</legend>
+  First name:<br>
+  <input type="text" name="firstname" value="Mickey" readonly>
+  <br>
+  Last name:<br>
+  <input type="text" name="lastname" value="Mouse"><br>
+  </fieldset>
+  <br>
+  <fieldset>
+  <legend>Dropdown List:</legend>
+  <select name="cars" size="3" multiple>
+  <option value="volvo" selected>Volvo</option>
+  <option value="saab">Saab</option>
+  <option value="fiat">Fiat</option>
+  <option value="audi">Audi</option>
+  </select>
+  </fieldset>
+  <br>
+  <fieldset>
+  <legend>Datalist:</legend>
+  <input list="browsers" name="browser">
+  <datalist id="browsers">
+    <option value="Internet Explorer">
+    <option value="Firefox">
+    <option value="Chrome">
+    <option value="Opera">
+    <option value="Safari">
+  </datalist>
+  </fieldset>
+  <br>
+  <fieldset>
+  <legend>Radio Buttons:</legend>
+  <input type="radio" name="gender" value="male" checked> Male<br>
+  <input type="radio" name="gender" value="female"> Female<br>
+  <input type="radio" name="gender" value="other"> Other
+  </fieldset>
+  <br>
+  <textarea name="message" rows="10" cols="30">
+  The cat was playing in the garden.
+  </textarea>
+  <br><br>
+  <textarea name="message" style="width:200px; height:200px">
+  The cat was playing in the garden.
+  </textarea>
+  <br><br>
+  <button type="button" onclick="alert('Hello World!')">Click Me!</button>
+  <br><br>
+  <input type="button" onclick="alert('Hello World')" value="Click Me">
+  <br><br>
+  <input type="submit" value="Submit">
+</form> 
+<br>
+<form action="/action_page.php"
+  oninput="x.value=parseInt(a.value)+parseInt(b.value)">
+  0
+  <input type="range"  id="a" name="a" value="50">
+  100 +
+  <input type="number" id="b" name="b" value="50">
+  =
+  <output name="x" for="a b"></output>
+  <br><br>
+  <input type="submit">
+</form>
+<br>
+<form autocomplete="on">
+  User name:<br>
+  <input type="text" name="username" required><br>
+  User password:<br>
+  <input type="password" name="psw" required>
+  <br><br>
+  <input type="checkbox" name="vehicle1" value="Bike"> I have a bike<br>
+  <input type="checkbox" name="vehicle2" value="Car"> I have a car 
+  <br><br>
+  <input type="color">
+  <br><br>
+  Enter a date before 1980-01-01:
+  <input type="date" name="bday" max="1979-12-31"><br><br>
+  Enter a date after 2000-01-01:
+  <input type="date" name="bday" min="2000-01-02"><br><br>
+  Date and time:
+  <input type="datetime-local" name="bdaytime"><br><br>
+  E-mail:
+  <input type="email" name="email" placeholder="Email">
+  <input type="submit"><br><br>
+  Between 1 and 5:
+  <input type="number" name="quantity" min="1" max="5"><br><br>
+  <input type="text" name="firstname" value ="John" disabled><br><br>
+  <input type="number" name="points" step="3"><br><br>
+  <input type="submit"><br><br>
+  <input type="reset">
+</form>
+</body>
+</html>
+
+

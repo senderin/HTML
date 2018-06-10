@@ -1,0 +1,148 @@
+<!DOCTYPE html> 
+<html> 
+<body> 
+
+<h2>HTML Video</h2>
+<hr>
+<!--
+The controls attribute adds video controls, like play, pause, and volume.
+
+If height and width are not set, the page might flicker while the video loads.
+
+The <source> element allows you to specify alternative video files which the browser may choose from. The browser will use the first recognized format.
+
+The text between the <video> and </video> tags will only be displayed in browsers that do not support the <video> element.
+
+To start a video automatically use the autoplay attribute
+-->
+<video id="video1" width="400" controls autoplay>
+  <source src="mov_bbb.mp4" type="video/mp4">
+  <source src="mov_bbb.ogg" type="video/ogg">
+  Your browser does not support HTML5 video.
+</video>
+
+<div style="text-align:left"> 
+  <button onclick="playPause()">Play/Pause</button> 
+  <button onclick="makeBig()">Big</button>
+  <button onclick="makeSmall()">Small</button>
+  <button onclick="makeNormal()">Normal</button>
+  <br><br>
+</div>
+
+<script> 
+var myVideo = document.getElementById("video1"); 
+
+function playPause() { 
+    if (myVideo.paused) 
+        myVideo.play(); 
+    else 
+        myVideo.pause(); 
+} 
+
+function makeBig() { 
+    myVideo.width = 560; 
+} 
+
+function makeSmall() { 
+    myVideo.width = 320; 
+} 
+
+function makeNormal() { 
+    myVideo.width = 420; 
+} 
+</script> 
+
+<h2>HTML Audio</h2>
+<hr>
+
+<!-- The HTML5 <audio> element specifies a standard way to embed audio in a web page. -->
+<!-- The controls attribute adds audio controls, like play, pause, and volume.
+
+The <source> element allows you to specify alternative audio files which the browser may choose from. The browser will use the first recognized format.
+
+The text between the <audio> and </audio> tags will only be displayed in browsers that do not support the <audio> element.
+-->
+<audio controls>
+  <source src="horse.ogg" type="audio/ogg">
+  <source src="horse.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+
+<h2>HTML Plug-ins</h2>
+<hr>
+<!-- Helper applications (plug-ins) are computer programs that extend the standard functionality of a web browser.
+
+Examples of well-known plug-ins are Java applets.
+
+Plug-ins can be added to web pages with the <object> tag or the <embed> tag. 
+
+Plug-ins can be used for many purposes: display maps, scan for viruses, verify your bank id, etc.
+-->
+<!-- The <object> element is supported by all browsers.
+
+The <object> element defines an embedded object within an HTML document.
+
+It is used to embed plug-ins (like Java applets, PDF readers, Flash Players) in web pages.
+
+The <object> element can also be used to include HTML in HTML
+-->
+<object width="400" height="50" data="bookmark.swf"></object>
+<object width="100%" height="500px" data="snippet.html"></object>
+<object data="audi.jpeg" width="50%" height="%50"></object>
+<br><br><br>
+<!-- The <embed> element is supported in all major browsers.
+
+The <embed> element also defines an embedded object within an HTML document.
+
+Note that the <embed> element does not have a closing tag. It can not contain alternative text.
+-->
+<embed width="400" height="50" src="bookmark.swf">
+<embed width="100%" height="500px" src="snippet.html">
+<embed src="audi.jpeg" width="50%" height="%50">
+
+<h2>HTML YouTube Videos</h2>
+<hr>
+<!--To play your video on a web page, do the following:
+
+Upload the video to YouTube
+Take a note of the video id
+Define an <iframe> element in your web page
+Let the src attribute point to the video URL
+Use the width and height attributes to specify the dimension of the player
+Add any other parameters to the URL (see below)
+-->
+<iframe width="420" height="315"
+src="https://www.youtube.com/embed/tgbNymZ7vqY">
+</iframe>
+
+<!--You can have your video start playing automatically when a user visits that page by adding a simple parameter to your YouTube URL.
+
+Note: Take careful consideration when deciding to autoplay your videos. Automatically starting a video can annoy your visitor and end up causing more harm than good.
+
+Value 0 (default): The video will not play automatically when the player loads.
+
+Value 1: The video will play automatically when the player loads.
+-->
+<iframe width="420" height="315"
+src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1">
+</iframe>
+<!-- 
+YouTube - Loop
+Value 0 (default): The video will play only once.
+
+Value 1: The video will loop (forever).
+-->
+<iframe width="420" height="315"
+src="https://www.youtube.com/embed/tgbNymZ7vqY?playlist=tgbNymZ7vqY&loop=1">
+</iframe>
+<!--YouTube - Controls
+Value 0: Player controls does not display.
+
+Value 1 (default): Player controls display.
+-->
+<iframe width="420" height="315"
+src="https://www.youtube.com/embed/tgbNymZ7vqY?controls=0">
+</iframe>
+
+</body> 
+</html>

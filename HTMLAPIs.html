@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+#div1 {
+    width: 350px;
+    height: 70px;
+    padding: 10px;
+    border: 1px solid #aaaaaa;
+}
+</style>
+<script>
+function allowDrop(ev) {
+    ev.preventDefault();
+}
+
+function drag(ev) {
+    ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function drop(ev) {
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("text");
+    ev.target.appendChild(document.getElementById(data));
+}
+</script>
+</head>
+<body>
+<h2>HTML5 Geolocation</h2>
+<hr>
+<!--The HTML Geolocation API is used to locate a user's position.
+Since this can compromise privacy, the position is not available unless the user approves it.
+The getCurrentPosition() method is used to return the user's position.
+
+Example explained:
+
+Check if Geolocation is supported
+If supported, run the getCurrentPosition() method. If not, display a message to the user
+If the getCurrentPosition() method is successful, it returns a coordinates object to the function specified in the parameter (showPosition)
+The showPosition() function outputs the Latitude and Longitude
+
+The second parameter of the getCurrentPosition() method is used to handle errors. It specifies function showError() to run if it fails to get the user's location.The getCurrentPosition() method returns an object on success. The latitude, longitude and accuracy properties are always returned. 
+-->
+
+<p>Click the button to get your coordinates.</p>
+
+<button onclick="getLocation()">Try It</button>
+
+<p id="demo"></p>
+
+<script>
+var x = document.getElementById("demo");
+
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition, showError);
+    } else { 
+        x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+}
+
+function showPosition(position) {
+    x.innerHTML = "Latitude: " + position.coords.latitude + 
+    "<br>Longitude: " + position.coords.longitude;
+}
+
+function showError(error) {
+    switch(error.code) {
+        case error.PERMISSION_DENIED:
+            x.innerHTML = "User denied the request for Geolocation."
+            break;
+        case error.POSITION_UNAVAILABLE:
+            x.innerHTML = "Location information is unavailable."
+            break;
+        case error.TIMEOUT:
+            x.innerHTML = "The request to get user location timed out."
+            break;
+        case error.UNKNOWN_ERROR:
+            x.innerHTML = "An unknown error occurred."
+            break;
+    }
+}
+</script>
+
+<!-- To display the result in a map, you need access to a map service, like Google Maps.-->
+<p id="demo">Click the button to get your position.</p>
+
+<button onclick="getLocation()">Try It</button>
+
+<div id="mapholder"></div>
+
+<script>
+var x = document.getElementById("demo");
+
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition, showError);
+    } else {
+        x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+}
+
+function showPosition(position) {
+    var latlon = position.coords.latitude + "," + position.coords.longitude;
+    var img_url = "https://maps.googleapis.com/maps/api/staticmap?center="
+    +latlon+"&zoom=14&size=400x300&key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU";
+    document.getElementById("mapholder").innerHTML = "<img src='"+img_url+"'>";
+}
+//To use this code on your website, get a free API key from Google.
+//Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
+
+function showError(error) {
+    switch(error.code) {
+        case error.PERMISSION_DENIED:
+            x.innerHTML = "User denied the request for Geolocation."
+            break;
+        case error.POSITION_UNAVAILABLE:
+            x.innerHTML = "Location information is unavailable."
+            break;
+        case error.TIMEOUT:
+            x.innerHTML = "The request to get user location timed out."
+            break;
+        case error.UNKNOWN_ERROR:
+            x.innerHTML = "An unknown error occurred."
+            break;
+    }
+}
+</script>
+<!-- The Geolocation object also has other interesting methods:
+
+watchPosition() - Returns the current position of the user and continues to return updated position as the user moves (like the GPS in a car).
+clearWatch() - Stops the watchPosition() method.
+The example below shows the watchPosition() method. You need an accurate GPS device to test this (like iPhone)
+-->
+<p>Click the button to get your coordinates.</p>
+
+<button onclick="getLocation()">Try It</button>
+
+<p id="demo"></p>
+
+<script>
+var x = document.getElementById("demo");
+
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.watchPosition(showPosition);
+    } else { 
+        x.innerHTML = "Geolocation is not supported by this browser.";}
+    }
+    
+function showPosition(position) {
+    x.innerHTML="Latitude: " + position.coords.latitude + 
+    "<br>Longitude: " + position.coords.longitude;
+}
+</script>
+
+<h2>HTML5 Drag and Drop</h2>
+<hr>
+<!--In HTML5, drag and drop is part of the standard: Any element can be draggable.
+
+1.First of all: To make an element draggable, set the draggable attribute to true: <img draggable="true">
+
+2.Then, specify what should happen when the element is dragged.
+
+In the example above, the ondragstart attribute calls a function, drag(event), that specifies what data to be dragged.
+
+The dataTransfer.setData() method sets the data type and the value of the dragged data:
+
+function drag(ev) {
+    ev.dataTransfer.setData("text", ev.target.id);
+}
+In this case, the data type is "text" and the value is the id of the draggable element ("drag1").
+
+3.The ondragover event specifies where the dragged data can be dropped.
+
+By default, data/elements cannot be dropped in other elements. To allow a drop, we must prevent the default handling of the element.
+
+This is done by calling the event.preventDefault() method for the ondragover event:
+
+event.preventDefault()
+
+4.Do the Drop - ondrop
+When the dragged data is dropped, a drop event occurs.
+
+In the example above, the ondrop attribute calls a function, drop(event):
+
+function drop(ev) {
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("text");
+    ev.target.appendChild(document.getElementById(data));
+}
+Code explained:
+
+Call preventDefault() to prevent the browser default handling of the data (default is open as link on drop)
+Get the dragged data with the dataTransfer.getData() method. This method will return any data that was set to the same type in the setData() method
+The dragged data is the id of the dragged element ("drag1")
+Append the dragged element into the drop element
+
+-->
+
+<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+<br>
+<img id="drag1" src="img_logo.gif" draggable="true" ondragstart="drag(event)" width="336" height="69">
+
+<h2>HTML5 Web Storage</h2>
+<hr>
+<!--HTML web storage; better than cookies.
+With web storage, web applications can store data locally within the user's browser.
+Web storage is more secure, and large amounts of data can be stored locally, without affecting website performance.
+
+Unlike cookies, the storage limit is far larger (at least 5MB) and information is never transferred to the server.
+
+HTML web storage provides two objects for storing data on the client:
+
+window.localStorage - stores data with no expiration date
+window.sessionStorage - stores data for one session (data is lost when the browser tab is closed)
+Before using web storage, check browser support for localStorage and sessionStorage:
+
+if (typeof(Storage) !== "undefined") {
+    // Code for localStorage/sessionStorage.
+} else {
+    // Sorry! No Web Storage support..
+}
+-->
+
+<div id="result"></div>
+
+<script>
+// Check browser support
+if (typeof(Storage) !== "undefined") {
+    // Store
+    localStorage.setItem("lastname", "Smith");
+    // Retrieve
+    document.getElementById("result").innerHTML = localStorage.getItem("lastname");
+} else {
+    document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
+}
+</script>
+
+<!-- The localStorage object stores the data with no expiration date. The data will not be deleted when the browser is closed, and will be available the next day, week, or year.
+
+The syntax for removing the "lastname" localStorage item is as follows:
+localStorage.removeItem("lastname");
+
+Note: Name/value pairs are always stored as strings. Remember to convert them to another format when needed!
+
+-->
+
+<script>
+function clickCounter() {
+    if(typeof(Storage) !== "undefined") {
+        if (localStorage.clickcount) {
+            localStorage.clickcount = Number(localStorage.clickcount)+1;
+        } else {
+            localStorage.clickcount = 1;
+        }
+        document.getElementById("result2").innerHTML = "You have clicked the button " + localStorage.clickcount + " time(s).";
+    } else {
+        document.getElementById("result2").innerHTML = "Sorry, your browser does not support web storage...";
+    }
+}
+</script>
+<p><button onclick="clickCounter()" type="button">Click me!</button></p>
+<div id="result2"></div>
+
+<!-- The sessionStorage object is equal to the localStorage object, except that it stores the data for only one session. The data is deleted when the user closes the specific browser tab.
+
+-->
+<script>
+function clickCounter() {
+    if(typeof(Storage) !== "undefined") {
+        if (sessionStorage.clickcount) {
+            sessionStorage.clickcount = Number(sessionStorage.clickcount)+1;
+        } else {
+            sessionStorage.clickcount = 1;
+        }
+        document.getElementById("result3").innerHTML = "You have clicked the button " + sessionStorage.clickcount + " time(s) in this session.";
+    } else {
+        document.getElementById("result3").innerHTML = "Sorry, your browser does not support web storage...";
+    }
+}
+</script>
+<p><button onclick="clickCounter()" type="button">Click me!</button></p>
+<div id="result3"></div>
+
+<h2>HTML5 Web Workers</h2>
+<hr>
+
+<!-- A web worker is a JavaScript running in the background, without affecting the performance of the page. 
+
+When executing scripts in an HTML page, the page becomes unresponsive until the script is finished.
+
+A web worker is a JavaScript that runs in the background, independently of other scripts, without affecting the performance of the page. You can continue to do whatever you want: clicking, selecting things, etc., while the web worker runs in the background.
+
+The script is stored in the "demo_workers.js" file:
+
+var i = 0;
+
+function timedCount() {
+    i = i + 1;
+    postMessage(i);
+    setTimeout("timedCount()",500);
+}
+
+timedCount();
+The important part of the code above is the postMessage() method - which is used to post a message back to the HTML page.
+
+Create a Web Worker Object
+
+Check if the worker already exists, if not - it creates a new web worker object and runs the code in "demo_workers.js":
+
+if (typeof(w) == "undefined") {
+    w = new Worker("demo_workers.js");
+}
+Then we can send and receive messages from the web worker.
+
+Add an "onmessage" event listener to the web worker.
+
+w.onmessage = function(event){
+    document.getElementById("result").innerHTML = event.data;
+};
+When the web worker posts a message, the code within the event listener is executed. The data from the web worker is stored in event.data.
+
+Terminate a Web Worker
+When a web worker object is created, it will continue to listen for messages (even after the external script is finished) until it is terminated.
+
+To terminate a web worker, and free browser/computer resources, use the terminate() method:
+
+w.terminate();
+Reuse the Web Worker
+If you set the worker variable to undefined, after it has been terminated, you can reuse the code:
+
+w = undefined;
+
+-->
+
+<p>Count numbers: <output id="result4"></output></p>
+<button onclick="startWorker()">Start Worker</button> 
+<button onclick="stopWorker()">Stop Worker</button>
+
+<script>
+var w;
+
+function startWorker() {
+    if(typeof(Worker) !== "undefined") {
+    	//Web worker support!
+        if(typeof(w) == "undefined") {
+            w = new Worker("demo_workers.js");
+        }
+        w.onmessage = function(event) {
+            document.getElementById("result4").innerHTML = event.data;
+        };
+    } else {
+    //No Web Worker support..
+        document.getElementById("result4").innerHTML = "Sorry, your browser does not support Web Workers...";
+    }
+}
+
+function stopWorker() { 
+    w.terminate();
+    w = undefined;
+}
+</script>
+
+<h2>HTML5 SSE(Server-Sent Events-One Way Messaging))</h2>
+<hr>
+<!--A server-sent event is when a web page automatically gets updates from a server.
+
+Examples: Facebook/Twitter updates, stock price updates, news feeds, sport results, etc.
+
+-->
+
+<h4>Getting server updates</h4>
+<div id="result5"></div>
+
+<script>
+if(typeof(EventSource) !== "undefined") {
+// Yes! Server-sent events support!
+    var source = new EventSource("demo_sse.php");
+    source.onmessage = function(event) {
+        document.getElementById("result5").innerHTML += event.data + "<br>";
+    };
+} else {
+    document.getElementById("result5").innerHTML = "Sorry, your browser does not support server-sent events...";
+}
+</script>
+
+<!-- For the example above to work, you need a server capable of sending data updates (like PHP or ASP).
+
+Code in PHP (demo_sse.php):
+
+<?php
+header('Content-Type: text/event-stream');
+header('Cache-Control: no-cache');
+
+$time = date('r');
+echo "data: The server time is: {$time}\n\n";
+flush();
+?>
+-->
+
+</body>
+</html>

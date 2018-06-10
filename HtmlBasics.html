@@ -1,0 +1,1020 @@
+<!-- HTML elements with no content are called empty elements. Empty elements do not have an end tag, such as the br element (which indicates a line break). -->
+
+<!-- The HTML element is everything from the start tag to the end tag -->
+
+<!-- HTML tags are not case sensitive -->
+<!-- Use Lowercase Attributes -->
+<!-- Quote Attribute Values -->
+
+<!-- Attributes are always specified in the start tag
+Attributes usually come in name/value pairs like: name="value" -->
+
+<!-- disabled attribute: Specifies that an input element should be disabled -->
+<!-- id attribute:	Specifies a unique id for an element -->
+
+<!-- Search engines use the headings to index the structure and content of your web pages. -->
+
+<!-- View HTML Source Code:
+Right-click in an HTML page and select "View Page Source" (in Chrome) or "View Source" (in IE), or similar in other browsers. This will open a window containing the HTML source code of the page. (Sayfa Kaynaðý)-->
+
+<!-- Without a forward slash at the end of subfolder addresses, you might generate two requests to the server. Many servers will automatically add a forward slash to the end of the address, and then create a new request. ex: https://www.w3schools.com/html/ -->
+
+<!--The class name is case sensitive!-->
+
+<!DOCTYPE html> <!-- defines this document to be HTML5 and must-be -->
+<!-- The language is declared with the lang attribute. -->
+<html lang="en-US"> <!-- the root element of an HTML page -->
+
+
+<head> <!-- contains meta information about the document -->
+<!-- Metadata typically define the document title, character set, styles, links, scripts, and other meta information. Metadata is not displayed. -->
+<!-- The head element is placed between the html tag and the body tag -->
+<title>Page Title</title> <!-- a title for the document -->
+<meta charset="UTF-8">
+
+<!--Internal CSS -->
+<!-- Remove this comment to see
+<style>
+h1 {
+    color: blue;
+    font-family: verdana;
+    font-size: 300%;
+}
+p  {
+    color: red;
+    font-family: courier;
+    font-size: 160%;
+}
+</style>
+-->
+<style>
+#p01 {
+    color: blue;
+}
+
+p.error {
+    color: red;
+}
+
+a:link {
+    color: green; 
+    background-color: transparent; 
+    text-decoration: none;
+}
+
+a:visited {
+    color: pink;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a:hover {
+    color: red;
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+a:active {
+    color: yellow;
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 15px;
+    text-align: left;
+}
+table#t01 tr:nth-child(even) {
+    background-color: #eee;
+}
+table#t01 tr:nth-child(odd) {
+   background-color: #fff;
+}
+table#t01 th {
+    background-color: black;
+    color: white;
+}
+
+ul#HL{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333333;
+}
+
+ul#HL li {
+    float: left;
+}
+
+ul#HL li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+}
+
+ul#HL li a:hover {
+    background-color: #111111;
+}
+
+.city {
+    background-color: tomato;
+    color: white;
+    padding: 10px;
+}
+.main {
+    text-align: center;
+}
+
+#myHeader {
+    background-color: lightblue;
+    color: black;
+    padding: 40px;
+    text-align: center;
+}
+
+.flex-container {
+    display: -webkit-flex;
+    display: flex;  
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+    text-align: center;
+}
+
+.flex-container > * {
+    padding: 15px;
+    -webkit-flex: 1 100%;
+    flex: 1 100%;
+}
+
+.article {
+    text-align: left;
+}
+
+header {background: black;color:white;}
+footer {background: #aaa;color:white;}
+.nav {background:#eee;}
+
+.nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+.nav ul a {
+    text-decoration: none;
+}
+
+@media all and (min-width: 768px) {
+    .nav {text-align:left;-webkit-flex: 1 auto;flex:1 auto;-webkit-order:1;order:1;}
+    .article {-webkit-flex:5 0px;flex:5 0px;-webkit-order:2;order:2;}
+    footer {-webkit-order:3;order:3;}
+}
+
+</style>
+
+</head> 
+
+<body> <!-- the visible page content -->
+
+<!-- Number after 'h' letter represents punto of text (h1 to h6) -->
+<!-- Browsers automatically add some white space (a margin) before and after a heading. -->
+<h1>Heading 1</h1> <!-- a large heading -->
+<h2>Heading 2</h2>
+<h3>Heading 3</h3>
+<h2>Heading 2</h2>
+
+<!-- Browsers automatically add some white space (a margin) before and after a paragraph. -->
+<p>First paragraph.</p> <!-- a paragraph -->
+
+<!-- The link's destination is specified in the href attribute. -->
+<a href="https://www.w3schools.com">This is a link </a>
+<br> <!-- line break. --> 
+<!-- href="www.wwf.org.uk" href has wrong value,
+href is missing the http:// or https:// -->
+
+<!-- The source file (src), width(as pixel), and height(as pixel) are provided as attributes -->
+<img src="w3schools.jpg" alt="W3School.com" weight="104" height="142" >
+<br> <br/> <!-- Careful to end tag -->
+<!-- The alt attribute specifies an alternative text to be used, when an image cannot be displayed. -->
+<img src="img_typo.jpg" alt="Girl with a jacket">
+<br>
+<br>
+
+<button>Click me</button>
+
+<h2>HTML Lists</h2>
+<hr>
+<!-- The CSS list-style-type property is used to define the style of the list item marker: disc, circle, square, none-->
+<h2>An Unordered HTML List</h2>
+<ul style="list-style-type:square"> <!-- (unordered/bullet list) tag -->
+  <li>Coffee</li> <!-- (list items) tag -->
+  <li>Tea</li>
+  <li>Milk</li>
+</ul>  
+
+<h2>An Ordered HTML List</h2>
+<!--The type attribute of the <ol> tag, defines the type of the list item marker:
+1, A, a, I, i-->
+<ol type="I" start="50"> <!-- (ordered/numbered list) tag -->
+  <li>Coffee</li>
+  <li>Tea</li>
+  <li>Milk</li>
+</ol>
+
+<h2>A Description List</h2>
+<dl> <!-- dl:description list-->
+  <dt>Coffee</dt> <!-- dt: the term (name)-->
+  <dd>- black hot drink</dd> <!-- dd: describes each term-->
+  <dt>Milk</dt>
+  <dd>- white cold drink</dd>
+</dl>
+
+<h2>A Nested List</h2>
+<ul>
+  <li>Coffee</li>
+  <li>Tea
+    <ul>
+    <li>Black tea</li>
+    <li>Green tea</li>
+    </ul>
+  </li>
+  <li>Milk</li>
+</ul>
+
+<h2>Horizontal List with CSS</h2>
+<ul id="HL">
+  <li><a href="#home">Home</a></li>
+  <li><a href="#news">News</a></li>
+  <li><a href="#contact">Contact</a></li>
+  <li><a href="#about">About</a></li>
+</ul>
+
+<!-- The style attribute is used to specify the styling of an element, like color, font, size etc. -->
+<p style="color:red">I am a paragraph.</p>
+
+<!-- The value of the title attribute will be displayed as a tooltip when you mouse over the element -->
+<p title="Tooltip" > This is a paragraph with tooltip. </p>
+
+<!-- In some situations, when the attribute value itself contains double quotes, it is necessary to use single quotes or vice versa -->
+<p title="Double 'single' quotes"> Single qoutes in double one </p>
+<p title='Single "double" quotes'> Double qoutes in single one </p>
+
+<h1 style="font-size:60px"> Bigger Heading </h1>
+
+<h1>Horizontal Rule:</h1>
+<hr>
+
+<h2>This is heading 2</h2>
+<p>This is some text.</p>
+<hr>
+
+<h3>This is heading 3</h3>
+<p>This is some other text.</p>
+<hr>
+
+<h4>This is heading 4</h4>
+<p>This is some other text.</p>
+<br>
+
+<h2>HTML Paragraphs:</h2>
+<hr>
+<!-- The browser will remove any extra spaces and extra lines when the page is displayed -->
+<p>
+This paragraph
+contains         a lot of spaces
+in the source         code,
+but the        browser 
+ignores it.
+</p>
+<p>This is<br>a paragraph<br>with line breaks.</p>
+
+<!-- The text inside a <pre> element is displayed in a fixed-width font (usually Courier), and it preserves both spaces and line breaks: -->
+<pre> <!-- preformatted text -->
+  My Bonnie lies over the ocean.
+
+  My Bonnie lies over the sea.
+
+  My Bonnie lies over the ocean.
+
+  Oh, bring back my Bonnie to me.
+</pre>
+
+<h2>HTML Styles:</h2>
+<hr>
+<p  style="background-color:powderblue;">Heading with background color</p>
+<p style="color:blue;">Color is blue</p>
+<p style="color:red;">Color is red</p>
+<p style="font-family:verdana;">Font is Verdana</p>
+<p style="font-family:courier;">Font is Courier</p>
+<p style="font-size:160%;">Font size is 160%</p>
+<p style="text-align:center;">Centered paragraph</p>
+<!--padding property defines a padding (space) between the text and the border:-->
+<p style="border: 1px solid powderblue;"> Without padding </p>
+<p style="border: 1px solid powderblue; padding: 30px;"> With padding </p>
+<!-- margin property defines a margin (space) outside the border: -->
+<p style="border: 1px solid powderblue; margin: 50px;"> With padding </p>
+
+<!-- To change background color of the PAGE: <p style="text-align:center;">Centered paragraph.</p> -->
+<!-- To center align all content on the PAGE: <body style="text-align:center"> -->
+
+<h2>HTML Text Formatting:</h2>
+<hr>
+<!-- Formatting elements (semantic:anlamsal): 
+<b> - Bold text
+<strong> - Important text-semantic "strong" importance
+<i> - Italic text
+<em> - Emphasized text-semantic importance
+<mark> - Marked text
+<small> - Small text
+<del> - Deleted text
+<ins> - Inserted text
+<sub> - Subscript text
+<sup> - Superscript text 
+-->
+<!-- Browsers display <strong> as <b>, and <em> as <i>. However, there is a difference in the meaning of these tags: <b> and <i> defines bold and italic text, but <strong> and <em> means that the text is "important". -->
+
+<p><b>This text is bold</b></p>
+<p><i>This text is italic</i></p>
+<p>This is<sub> subscript</sub> and <sup>superscript</sup></p>
+<p>H<sub>2</sub>O is the scientific term for water.</p>
+<p><strong>This text is important</strong></p>
+<p><em>This text is emphasized</em></p>
+<p><mark>This text is marked</mark></p>
+<p>HTML <mark>Marked</mark> Formatting</p>
+<p><small>This text is small</small></p>
+<p>HTML <small>Small</small> Formatting</p>
+<p><del>This text is deleted</del></p>
+<p>My favorite color is <del>blue</del> red.</p>
+<p><ins>This text is inserted</ins></p>
+<p>My favorite <ins>color</ins> is red.</p>
+
+<h2>HTML Quotation and Citation Elements:</h2>
+<hr>
+<!--Browsers usually insert quotation marks around the q element. -->
+<!-- <q> for Short Quotations -->
+<p>WWF's goal is to: <q>Build a future where people live in harmony with nature.</q></p>
+<!-- <blockquote> element defines a section that is quoted from another source. -->
+<p>Here is a quote from WWF's website:</p>
+<blockquote cite="http://www.worldwildlife.org/who/index.html">
+For 50 years, WWF has been protecting the future of nature.
+The world's leading conservation organization,
+WWF works in 100 countries and is supported by
+1.2 million members in the United States and
+close to 5 million globally.
+</blockquote>
+<!-- <abbr> element defines an abbreviation or an acronym. -->
+<p>The <abbr title="World Health Organization">WHO</abbr> was founded in 1948.</p>
+<!-- <address> element defines contact information (author/owner) of a document or an article. -->
+<address>
+Written by John Doe.<br> 
+Visit us at:<br>
+Example.com<br>
+Box 564, Disneyland<br>
+USA
+</address>
+<!-- <cite> element defines the title of a work. -->
+<p><cite>The Scream</cite> by Edvard Munch. Painted in 1893.</p>
+<!-- <bdo> element defines bi-directional override. -->
+<bdo dir="rtl">This text will be written from right to left</bdo>
+
+<h2>HTML Colors:</h2>
+<hr>
+<h1 style="background-color:Tomato; color:white;">Tomato</h1>
+<h1 style="background-color:Orange; color:white;">Orange</h1>
+<h1 style="background-color:DodgerBlue; color:white;">DodgerBlue</h1>
+<h1 style="background-color:MediumSeaGreen; color:white;">MediumSeaGreen</h1>
+<h1 style="background-color:Gray; color:white;">Gray</h1>
+<h1 style="background-color:SlateBlue; color:white;">SlateBlue</h1>
+<h1 style="background-color:Violet; color:white;">Violet</h1>
+<h1 style="background-color:LightGray; color:white;">LightGray</h1>
+
+<h1 style="border: 2px solid Tomato;">Hello World</h1>
+<h1 style="border: 5px solid DodgerBlue;">Hello World</h1>
+<h1 style="border: 8px solid Violet;">Hello World</h1>
+
+<h1 style="background-color:rgb(255, 99, 71);">rgb(255, 99, 71) Tomato</h1>
+<h1 style="background-color:#ff6347;">#ff6347 Tomato</h1>
+<h1 style="background-color:hsl(9, 100%, 64%);">hsl(9, 100%, 64%) Tomato</h1>
+<p style="background-color:rgba(255, 99, 71, 0.5);">rgba(255, 99, 71, 0.5) Tomato-50% transparent </p>
+<p style="background-color:hsla(9, 100%, 64%, 0.5);">hsla(9, 100%, 64%, 0.5) Tomato-50% transparent</p>
+
+<p>By using equal values for red, green, and blue, you will get different shades of gray:</p>
+<h1 style="background-color:rgb(180, 180, 180);">rgb(180, 180, 180)</h1>
+<h1 style="background-color:rgb(240, 240, 240);">rgb(240, 240, 240)</h1>
+<h1 style="background-color:rgb(255, 255, 255);">rgb(250, 250, 250)</h1>
+
+<!-- 
+HEX Value
+In HTML, a color can be specified using a hexadecimal value in the form:
+#rrggbb
+Where rr (red), gg (green) and bb (blue) are hexadecimal values between 00(the lowest value) and ff(highest value) (same as decimal 0-255).
+-->
+
+<!--
+HSL Value
+In HTML, a color can be specified using hue, saturation, and lightness (HSL) in the form:
+hsl(hue, saturation, lightness)
+Hue is a degree on the color wheel from 0 to 360. 0 is red, 120 is green, and 240 is blue.
+Saturation is a percentage value, 0% means a shade of gray, and 100% is the full color. Saturation can be described as the intensity of a color:
+100% is pure color, no shades of gray
+50% is 50% gray, but you can still see the color.
+0% is completely gray, you can no longer see the color.
+Lightness is also a percentage, 0% is black, 50% is neither light or dark, 100% is white 
+-->
+<h1 style="background-color:hsl(0, 60%, 50%);">hsl(0, 60%, 50%)</h1>
+<h1 style="background-color:hsl(0, 40%, 50%);">hsl(0, 40%, 50%)</h1>
+<h1 style="background-color:hsl(0, 20%, 50%);">hsl(0, 20%, 50%)</h1>
+<h1 style="background-color:hsl(0, 0%, 50%);">hsl(0, 0%, 50%)</h1>
+
+
+<h2>HTML CSS</h2>
+<hr>
+<!-- CSS stands for Cascading Style Sheets.
+CSS can be added to HTML elements in 3 ways:
+
+Inline - by using the style attribute in HTML elements
+Internal - by using a <style> element in the <head> section
+External - by using an external CSS file -->
+
+<p style="color:blue;">Inline CSS</p>
+
+<!-- Internal CSS
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			body {background-color: powderblue;}
+			h1   {color: blue;}
+			p    {color: red;}
+		</style>
+	</head>
+	<body>
+
+		<h1>This is a heading</h1>
+		<p>This is a paragraph.</p>
+
+	</body>
+</html>
+-->
+
+<!-- <link>	Defines a link between a document and an external resource -->
+<!-- External CSS
+<!DOCTYPE html>
+<html>
+	<head>
+  		<link rel="stylesheet" href="styles.css">
+	</head>
+	<body>
+
+		<h1>This is a heading</h1>
+		<p>This is a paragraph.</p>
+
+	</body>
+</html>
+
+Here is how the "styles.css" looks:
+body {
+    background-color: powderblue;
+}
+h1 {
+    color: blue;
+}
+p {
+    color: red;
+}
+-->
+<!-- a full URL to link to a style sheet: <link rel="stylesheet" href="https://www.w3schools.com/html/styles.css"
+links to a style sheet located in the html folder on the current web site:
+<link rel="stylesheet" href="/html/styles.css"
+links to a style sheet located in the same folder as the current page:
+<link rel="stylesheet" href="styles.css">
+-->
+
+<!-- To define a specific style FOR ONE SPECIAL ELEMENT, add an id attribute to the element. -->
+<!-- The id of an element should be unique within a page, so the id selector is used to select one unique element! -->
+<p>This is a paragraph.</p>
+<p id="p01">The element of ID attribute</p>
+<!-- To define a style FOR A SPECIAL TYPE OF ELEMENTS, add a class attribute to the element: -->
+<p class="error">The element of class attribute</p>
+<p class="error">The element of class attribute</p>
+
+<h2>HTML Links>
+<hr>
+<p><a href="https://www.w3.org/">W3C</a> is a link to a website on the World Wide Web.</p>
+
+<!-- A local link (link to the same web site) is specified with a relative URL (without http://www....). -->
+<a href="html_images.asp">HTML Images</a>
+
+<!-- The target attribute can have one of the following values:
+
+_blank - Opens the linked document in a new window or tab
+_self - Opens the linked document in the same window/tab as it was clicked (this is default)
+_parent - Opens the linked document in the parent frame
+_top - Opens the linked document in the full body of the window
+framename - Opens the linked document in a named frame
+-->
+<br>
+<a href="https://www.w3schools.com/html/" target="_blank" title="Go to W3Schools HTML section">Click here!</a>
+<br>
+<a href="https://www.w3schools.com/html/" target="_top" title="Go to W3Schools HTML section">Click here!</a>
+<br>
+<a href="default.asp">
+  <img src="smiley.gif" alt="HTML tutorial" style="width:42px;height:42px;border:0;">
+</a>
+
+<!-- HTML bookmarks are used to allow readers to jump to specific parts of a Web page. -->
+<p><a href="#C4">Jump to Chapter 4</a></p> <!-- add a link to the bookmark ("Jump to Chapter 4"), from within the same page:-->
+
+<h2>Chapter 1</h2>
+<p>This chapter explains ba bla bla</p>
+
+<h2>Chapter 2</h2>
+<p>This chapter explains ba bla bla</p>
+
+<h2>Chapter 3</h2>
+<p>This chapter explains ba bla bla</p>
+
+<h2 id="C4">Chapter 4</h2> <!-- create a bookmark -->
+<p>This chapter explains ba bla bla</p>
+
+<h2>Chapter 5</h2>
+<p>This chapter explains ba bla bla</p>
+
+<h2>Chapter 6</h2>
+<p>This chapter explains ba bla bla</p>
+
+<h2>Chapter 7</h2>
+<p>This chapter explains ba bla bla</p>
+
+<h2>Chapter 8</h2>
+<p>This chapter explains ba bla bla</p>
+
+<h2>Chapter 9</h2>
+<p>This chapter explains ba bla bla</p>
+
+<!-- Or, add a link to the bookmark ("Jump to Chapter 4"), from another page: 
+<a href="html_demo.html#C4">Jump to Chapter 4</a> -->
+
+<!-- To remove the underline from the link-->
+<a href="html_images.asp" target="_blank" style="text-decoration:none">HTML Images</a>
+
+<h2>HTML Images</h2>
+<hr>
+<!-- Always specify the width and height of an image. If width and height are not specified, the page might flicker while the image loads. -->
+<!-- suggest using the style attribute. It prevents styles sheets from changing the size of images /Yani style ile belirtirsen CSSler override edemez-->
+
+<img src="img_girl.jpg" alt="Girl in a jacket" style="width:500px;height:600px;">
+<img src="img_girl.jpg" alt="Girl in a jacket" width="500" height="600">
+<img src="programming.gif" alt="Computer man" style="width:48px;height:48px;">
+<br>
+<!-- Image as Link -->
+<a href="default.asp">
+  <img src="smiley.gif" alt="HTML tutorial" style="width:42px;height:42px;border:0;">
+</a>
+<br>
+<!--Floating-->
+<p>
+<img src="smiley.gif" alt="Smiley face"style="float:left;width:42px;height:42px">
+A paragraph with an image. A paragraph with an image.
+A paragraph with an image. A paragraph with an image.
+A paragraph with an image. A paragraph with an image. 
+</p>
+<br><br><br>
+
+<!--Image Maps-->
+<!--The name attribute of the <map> tag is associated with the <img>'s usemap attribute and creates a relationship between the image and the map.
+
+The <map> element contains a number of <area> tags, that define the clickable areas in the image-map.
+
+-->
+<img src="workplace.jpg" alt="Workplace" usemap="#workmap">
+
+<map name="workmap">
+  <area shape="rect" coords="34,44,270,350" alt="Computer" href="computer.htm">
+  <area shape="rect" coords="290,172,333,250" alt="Phone" href="phone.htm">
+  <area shape="circle" coords="337,300,44" alt="Coffee" href="coffee.htm">
+</map>
+
+<!-- To add background image
+To page for example:
+<body style="background-image:url('clouds.jpg')">
+-->
+
+<!-- Show one picture if the browser window (viewport) is a minimum of 650 pixels, and another image if not, but larger than 465 pixels. -->
+<!--The browser will use the first <source> element with matching attribute values, and ignore any following <source> elements.-->
+<!-- Always specify an <img> element as the last child element of the <picture> element. The <img> element is used by browsers that do not support the <picture> element, or if none of the <source> tags matched.-->
+<picture>
+  <source media="(min-width: 650px)" srcset="img_pink_flowers.jpg">
+  <source media="(min-width: 465px)" srcset="img_white_flower.jpg">
+  <img src="img_orange_flowers.jpg" alt="Flowers" style="width:auto;">
+</picture>
+
+<h2>HTML Tables<h2>
+<hr>
+<!-- The <td> elements are the data containers of the table.
+They can contain all sorts of HTML elements; text, images, lists, other tables, etc.-->
+<table id="t01">
+<caption>Caption</caption>
+  <tr> <!-- a table row -->
+    <th>Company</th> <!-- a table heading-->
+    <th>Contact</th>
+    <th>Country</th>
+  </tr>
+  <tr>
+    <td>Alfreds Futterkiste</td> <!--a table data-->
+    <td>Maria Anders</td>
+    <td>Germany</td>
+  </tr>
+  <tr>
+    <td>Centro comercial Moctezuma</td>
+    <td>Francisco Chang</td>
+    <td>Mexico</td>
+  </tr>
+  <tr>
+    <td>Ernst Handel</td>
+    <td>Roland Mendel</td>
+    <td>Austria</td>
+  </tr>
+  <tr>
+    <td>Island Trading</td>
+    <td>Helen Bennett</td>
+    <td>UK</td>
+  </tr>
+  <tr>
+    <td>Laughing Bacchus Winecellars</td>
+    <td>Yoshi Tannamuri</td>
+    <td>Canada</td>
+  </tr>
+  <tr>
+    <td>Magazzini Alimentari Riuniti</td>
+    <td>Giovanni Rovelli</td>
+    <td>Italy</td>
+  </tr>
+</table>
+
+<h2>HTML Block and Inline Elements</h2>
+<hr>
+<!--The DIV element is a block element, and will start on a new line. -->
+<div>Hello</div>
+<div>World</div>
+<!-- The SPAN element is an inline element, and will not start on a new line. -->
+<span>Hello</span>
+<span>World</span>
+
+<div style="background-color:black;color:white;padding:20px;">
+  <h2>London</h2>
+  <p>London is the capital city of England. It is the most populous city in the United Kingdom, with a metropolitan area of over 13 million inhabitants.</p>
+  <p>Standing on the River Thames, London has been a major settlement for two millennia, its history going back to its founding by the Romans, who named it Londinium.</p>
+</div> 
+
+<h1>My <span style="color:red">Important</span> Heading</h1>
+
+<h2 class="city main">London</h2>
+<p>London is the capital of England.</p>
+<h2 class="city">Tokyo</h2>
+<p>Tokyo is the capital of Japan.</p>
+
+
+<!-- Using The class Attribute in JavaScript -->
+<button onclick="myFunction()">Hide elements</button>
+<script>
+function myFunction() {
+  var x = document.getElementsByClassName("city");
+  for (var i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+}
+</script>
+
+<h2>HTML The id Attribute</h2>
+<hr>
+<h1 id="myHeader">My Header</h1>
+<!-- Using The id Attribute in JavaScript -->
+<button onclick="displayResult()">Change text</button>
+<script>
+function displayResult() {
+    document.getElementById("myHeader").innerHTML = "Have a nice day!";
+}
+</script>
+
+
+<h2>HTML Iframes</h2>
+<hr>
+<!--An iframe is used to display a web page within a web page. -->
+<iframe src="demo_iframe.htm" style="height:200px;width:300px;border:none;"  name="iframe_a"></iframe>
+<a href="https://www.w3schools.com" target="iframe_a">W3Schools.com</a>
+
+<h2>HTML Javascript</h2>
+<hr>
+<!--JavaScript makes HTML pages more dynamic and interactive.-->
+<button type="button"
+onclick="document.getElementById('demo').innerHTML = Date()">
+Click me to display Date and Time.</button>
+<p id="demo"></p>
+
+<!--Common uses for JavaScript are image manipulation, form validation, and dynamic changes of content.-->
+<!--To select an HTML element, JavaScript very often uses the document.getElementById() method.-->
+
+<!--The <script> tag is used to define a client-side script (JavaScript).-->
+<p id="demo2">This is a demonstration.</p>
+<script>
+document.getElementById("demo2").innerHTML = "Hello JavaScript!";
+document.getElementById("demo2").style.fontSize = "25px";
+document.getElementById("demo2").style.color = "red";
+document.getElementById("demo2").style.backgroundColor = "yellow";
+</script>
+
+<script>
+function light(sw) {
+    var pic;
+    if (sw == 0) {
+        pic = "pic_bulboff.gif"
+    } else {
+        pic = "pic_bulbon.gif"
+    }
+    document.getElementById('myImage').src = pic;
+}
+</script>
+<img id="myImage" src="pic_bulboff.gif" width="100" height="180">
+<p>
+<button type="button" onclick="light(1)">Light On</button>
+<button type="button" onclick="light(0)">Light Off</button>
+</p>
+
+<!--A browser without support for JavaScript will show the text written inside the noscript element.-->
+<p id="demo3"></p>
+<script>
+document.getElementById("demo3").innerHTML = "Hello JavaScript!";
+</script>
+<noscript>Sorry, your browser does not support JavaScript!</noscript>
+
+<h2>HTML File Paths</h2>
+<hr>
+<!--
+<img src="picture.jpg">	picture.jpg is located in the same folder as the current page
+<img src="images/picture.jpg">	picture.jpg is located in the images folder in the current folder
+<img src="/images/picture.jpg">	picture.jpg is located in the images folder at the root of the current web
+<img src="../picture.jpg">	picture.jpg is located in the folder one level up from the current folder
+-->
+
+<!--  An absolute file path is the full URL to an internet file -->
+<!-- A relative file path points to a file relative to the current page -->
+<!-- Use relative file paths (if possible).
+
+When using relative file paths, your web pages will not be bound to your current base URL. All links will work on your own computer (localhost) as well as on your current public domain and your future public domains. -->
+
+<h2>HTML Head</h2>
+<hr>
+
+<!-- The following tags describe metadata: <title>, <style>, <meta>, <link>, <script>, and <base>. -->
+
+<!-- The <title> element:
+
+defines a title in the browser tab
+provides a title for the page when it is added to favorites
+displays a title for the page in search engine results -->
+
+<!-- The <link> element is used to link to external style sheets:
+	<link rel="stylesheet" href="mystyle.css">
+-->
+
+<!-- The <meta> element is used to specify which character set is used, page description, keywords, author, and other metadata.
+
+Metadata is used by browsers (how to display content), by search engines (keywords), and other web services:
+	  <meta charset="UTF-8">
+      <meta name="description" content="Free Web tutorials">
+	  <meta name="keywords" content="HTML,CSS,XML,JavaScript">
+ 	  <meta name="author" content="John Doe">
+-->
+
+<!-- HTML5 introduced a method to let web designers take control over the viewport, through the <meta> tag.
+
+The viewport is the user's visible area of a web page. It varies with the device, and will be smaller on a mobile phone than on a computer screen.
+
+You should include the following <meta> viewport element in all your web pages:
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+A <meta> viewport element gives the browser instructions on how to control the page's dimensions and scaling.
+-->
+
+<!-- The <script> element is used to define client-side JavaScripts. -->
+
+<!-- The <base> element specifies the base URL and base target for all relative URLs in a page -->
+
+<!-- According to the HTML5 standard; the <html>, the <body>, and the <head> tag can be omitted.
+
+The following code will validate as HTML5:
+
+	<!DOCTYPE html>
+	<title>Page Title</title>
+
+	<h1>This is a heading</h1>
+	<p>This is a paragraph.</p>
+    
+Not recommend omitting the <html> and <body> tags. Omitting these tags can crash DOM or XML software and produce errors in older browsers (IE9).
+
+However, omitting the <head> tag has been a common practice for quite some time now.
+-->
+
+<h2>HTML Layout</h2>
+<hr>
+
+<img src="https://www.w3schools.com/html/img_sem_elements.gif" alt="layout">
+<!-- <header> - Defines a header for a document or a section
+<nav> - Defines a container for navigation links
+<section> - Defines a section in a document
+<article> - Defines an independent self-contained article
+<aside> - Defines content aside from the content (like a sidebar)
+<footer> - Defines a footer for a document or a section
+<details> - Defines additional details
+<summary> - Defines a heading for the <details> element -->
+
+<!-- There are four different ways to create multicolumn layouts. Each way has its pros and cons:
+
+CSS float property --common, easy, not flexibility
+CSS framework like W3.CSS or Bootstrap --fast
+CSS flexbox -- a new layout mode in CSS3, Use of flexbox ensures that elements behave predictably when the page layout must accommodate different screen sizes and different display devices. Disadvantages: Does not work in IE10 and earlier.
+-->
+
+<!-- CSS framework -->
+<div class="container" style="width: 100%; border: 1px solid gray;">
+
+<header style="padding: 1em;color: white;background-color: black;clear: left;text-align: center;">
+   <h1>City Gallery</h1>
+</header>
+  
+<nav style="float: left;max-width: 160px;margin: 0;padding: 1em;">
+  <ul style="list-style-type: none; padding: 0;">
+    <li><a href="#"  style="text-decoration: none;">London</a></li>
+    <li><a href="#" style="text-decoration: none;">Paris</a></li>
+    <li><a href="#" style="text-decoration: none;">Tokyo</a></li>
+  </ul>
+</nav>
+
+<article style="margin-left: 170px; border-left: 1px solid gray; padding: 1em; overflow: hidden;">
+  <h1>London</h1>
+  <p>London is the capital city of England. It is the most populous city in the  United Kingdom, with a metropolitan area of over 13 million inhabitants.</p>
+  <p>Standing on the River Thames, London has been a major settlement for two millennia, its history going back to its founding by the Romans, who named it Londinium.</p>
+</article>
+
+<footer style="padding: 1em;color: white;background-color: black;clear: left;text-align: center;">Copyright &copy; W3Schools.com</footer>
+
+</div>
+
+<!-- CSS Flexbox -->
+<div class="flex-container">
+<header>
+  <h1>City Gallery</h1>
+</header>
+
+<nav class="nav">
+<ul>
+  <li><a href="#">London</a></li>
+  <li><a href="#">Paris</a></li>
+  <li><a href="#">Tokyo</a></li>
+</ul>
+</nav>
+
+<article class="article">
+  <h1>London</h1>
+  <p>London is the capital city of England. It is the most populous city in the United Kingdom,
+  with a metropolitan area of over 13 million inhabitants.</p>
+  <p>Standing on the River Thames, London has been a major settlement for two millennia,
+  its history going back to its founding by the Romans, who named it Londinium.</p>
+  <p><strong>Resize this page to see what happens!</strong></p>
+</article>
+
+<footer>Copyright &copy; W3Schools.com</footer>
+</div>
+
+<h2>HTML Responsive Web Design</h2>
+<hr>
+<!-- Responsive Web Design makes your web page look good on all devices (desktops, tablets, and phones).
+Responsive Web Design is about using HTML and CSS to resize, hide, shrink, enlarge, or move the content to make it look good on any screen:
+-->
+
+<!-- When making responsive web pages, add the following <meta> element in all your web pages:
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+-->
+
+<!-- If the CSS width property is set to 100%, the image will be responsive and scale up and down:
+
+	<img src="img_girl.jpg" style="width:100%;">
+    
+The image can be scaled up to be larger than its original size. A better solution, in many cases, will be to use the max-width property instead:
+
+	<img src="img_girl.jpg" style="max-width:100%;height:auto;">
+
+The HTML <picture> element allows you to define different images for different browser window sizes:
+
+	<picture>
+  	<source srcset="img_smallflower.jpg" media="(max-width: 600px)">
+  	<source srcset="img_flowers.jpg" media="(max-width: 1500px)">
+  	<source srcset="flowers.jpg">
+ 	<img src="img_smallflower.jpg" alt="Flowers">
+	</picture>
+
+The text size can be set with a "vw" unit, which means the "viewport width":
+
+	<h1 style="font-size:10vw">Hello World</h1>
+    
+Viewport is the browser window size. 1vw = 1% of viewport width. If the viewport is 50cm wide, 1vw is 0.5cm.
+
+-->
+
+<h2>HTML Computer Code Elements</h2>
+<hr>
+<!-- The HTML <code> element defines a fragment of computer code. -->
+<code>
+x = 5;
+y = 6;
+z = x + y;
+</code>
+<!-- The HTML <kbd> element represents user input, like keyboard input or voice commands. -->
+<p>Save the document by pressing <kbd>Ctrl + S</kbd></p>
+<!--The HTML <samp> element represents output from a program or computing system. -->
+<p>If you input wrong value, the program will return <samp>Error!</samp></p>
+<!-- The HTML <var> element defines a variable. -->
+<p>Einstein wrote: <var>E</var> = <var>mc</var><sup>2</sup>.</p>
+
+<!--Notice that the <code> element does not preserve extra whitespace and line-breaks.
+To fix this, you can put the <code> element inside a <pre> element: -->
+<pre>
+<code>
+x = 5;
+y = 6;
+z = x + y;
+</code>
+</pre>
+
+<h2>HTML Entities</h2>
+<hr>
+<!--  Entity names are case sensitive. -->
+
+<!-- Some characters are reserved in HTML such as <,>.
+To display a less than sign (<) we must write: &lt; or &#60;
+-->
+
+<!-- Advantage of using an entity name: An entity name is easy to remember.
+Disadvantage of using an entity name: Browsers may not support all entity names, but the support for numbers is good. -->
+
+<!-- A non-breaking space is a space that will not break into a new line.
+the non-breaking space: &nbsp;
+-->
+
+<!-- The non-breaking hyphen (&#8209;) lets you use a hyphen character (-) that won't break. -->
+
+<!-- To add symbols to an HTML page, use an HTML entity name. -->
+<p>I will display &hearts;</p>
+
+<h2>HTML Encoding (Character Sets)</h2>
+<hr>
+<!-- UTF-8 (Unicode) covers almost all of the characters and symbols in the world. 
+The default character encoding for HTML5 is UTF-8.
+-->
+
+<!-- If a browser detects ISO-8859-1 in a web page, it defaults to ANSI, because ANSI is identical to ISO-8859-1 except that ANSI has 32 extra characters. -->
+
+<!-- You can use the CSS @charset rule to specify the character encoding used in a style sheet:
+	@charset "UTF-8";
+-->
+
+<!--URL ENCODING-->
+<!-- URL Encoding
+URLs can only be sent over the Internet using the ASCII character-set. If a URL contains characters outside the ASCII set, the URL has to be converted.
+
+URL encoding converts non-ASCII characters into a format that can be transmitted over the Internet.
+
+URL encoding replaces non-ASCII characters with a "%" followed by hexadecimal digits.
+
+URLs cannot contain spaces. URL encoding normally replaces a space with a plus (+) sign, or %20.
+-->
+
+<!-- HTML & XHTML -->
+<!-- XHTML is HTML written as XML.
+XHTML stands for EXtensible HyperText Markup Language
+XHTML is almost identical to HTML
+XHTML is stricter than HTML
+XHTML is HTML defined as an XML application
+XHTML is supported by all major browsers
+-->
+<!--How to Convert from HTML to XHTML
+Add an XHTML <!DOCTYPE> to the first line of every page
+Add an xmlns attribute to the html element of every page
+Change all element names to lowercase
+Close all empty elements
+Change all attribute names to lowercase
+Quote all attribute values
+-->
+<!--Validate HTML With The W3C Validator:This tool is an ongoing experiment in better HTML checking, and its behavior remains subject to change -->
+
+</body>
+
+</html>
